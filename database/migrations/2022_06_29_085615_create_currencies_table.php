@@ -6,24 +6,19 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateCurrenciesTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+
     public function up()
     {
         Schema::create('currencies', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->comment('نام ارز');
+            $table->string('symbol')->comment('نماد ارز');
+            $table->tinyInteger('fee')->default(0)->comment('فی');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('currencies');
