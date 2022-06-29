@@ -12,7 +12,7 @@ class CreateCurrenciesTable extends Migration
         Schema::create('currencies', function (Blueprint $table) {
             $table->id();
             $table->string('name')->comment('نام ارز');
-            $table->string('symbol')->comment('نماد ارز');
+            $table->string('symbol')->unique('symbol')->comment('نماد ارز');
             $table->tinyInteger('fee')->default(0)->comment('فی');
             $table->timestamps();
             $table->softDeletes();
