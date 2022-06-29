@@ -6,24 +6,18 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateWalletsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+
     public function up()
     {
         Schema::create('wallets', function (Blueprint $table) {
             $table->id();
+            $table->string('address')->comment('آدرس کیف پول');
+            $table->bigInteger('balance')->comment('میزان دارایی');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('wallets');
