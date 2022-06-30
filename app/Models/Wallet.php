@@ -14,5 +14,4 @@ class Wallet extends Model
 
     protected $fillable = ['address', 'balance'];
 
-
 }

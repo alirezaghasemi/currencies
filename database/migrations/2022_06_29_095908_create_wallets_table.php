@@ -12,7 +12,7 @@ class CreateWalletsTable extends Migration
         Schema::create('wallets', function (Blueprint $table) {
             $table->id();
             $table->string('address')->comment('آدرس کیف پول');
-            $table->string('balance')->comment('میزان دارایی');
+            $table->bigInteger('balance')->comment('میزان دارایی');
             $table->timestamps();
             $table->softDeletes();
         });
