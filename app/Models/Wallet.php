@@ -13,4 +13,6 @@ class Wallet extends Model
     protected $table = 'wallets';
 
     protected $fillable = ['address', 'balance'];
+
+
 }
