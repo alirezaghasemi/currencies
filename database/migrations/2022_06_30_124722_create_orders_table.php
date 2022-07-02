@@ -17,8 +17,8 @@ class CreateOrdersTable extends Migration
             $table->unsignedBigInteger('currency_id')->comment('شناسه ارز');
             $table->foreign('currency_id')->references('id')->on('currencies');
 
-            $table->decimal('amount', 16, 8)->comment('میزان دارایی');
-            $table->decimal('fee', 16, 8)->default(0)->comment('فی');
+            $table->string('amount')->comment('میزان دارایی');
+            $table->string('fee')->default(0)->comment('فی');
             $table->timestamps();
             $table->softDeletes();
         });
